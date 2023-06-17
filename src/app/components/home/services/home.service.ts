@@ -52,7 +52,7 @@ export class HomeService {
  */
 
   getWeatherConditions(): Observable<any> {
-    this.params = `location=17.3850,78.4867`;
+    this.params = `location=16.405861, 80.827473`;
     this.params += `&timesteps=current`;
     this.params += `&units=metric`;
     this.params += `&apikey=wDLWhazofwP83IoK7rHeyZxDTC4hpTO2`;

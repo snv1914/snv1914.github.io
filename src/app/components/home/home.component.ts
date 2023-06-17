@@ -8,6 +8,8 @@ import { HomeService } from './services/home.service';
 })
 export class HomeComponent implements OnInit {
 
+  currentWeather!: any;
+
   constructor(private homeService: HomeService) {}
 
   ngOnInit() {
@@ -17,7 +19,8 @@ export class HomeComponent implements OnInit {
   getWeatherConditions() {
       this.homeService.getWeatherConditions().subscribe({
         next: (response: any) => {
-          console.log(response)
+          console.log(response);
+          this.currentWeather = response.data.timelines[0].intervals[0];
         },
         error: (errorObj: any) => {
           console.log(errorObj)
